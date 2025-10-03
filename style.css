@@ -1,0 +1,87 @@
+/* Day 5 - CSS Basics */
+
+/* General page style */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5add9;
+  margin: 20px;
+  padding: 20px;
+}
+
+/* Styling heading */
+h1 {
+  color: #1e40af;
+  text-align: center;
+}
+
+/* Paragraph with class */
+.intro {
+  font-size: 18px;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+/* Card design */
+.card1 {
+  background: rgb(177, 77, 118);
+  padding: 20px;
+  justify-content: center; /* centers the card */
+  gap: 10px; /* adds space between the cards */
+  display: flex;
+  align-items: start;
+  box-shadow: 0 4px 8px rgba(216, 213, 213, 0.1);
+  width: 300px;
+}
+.card1:hover {
+  box-shadow: 0 8px 16px rgba(20, 1, 1, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.5s ease;
+}
+.card2 {
+  background: rgb(177, 77, 118);
+  padding: 20px;
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border-radius: 8px;
+  box-shadow : 0 4px 8px rgba(216, 213, 213, 0.1);
+  width: 300px;
+}
+.card2:hover {
+  box-shadow: 0 8px 16px rgba(20, 1, 1, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.5s ease;
+}
+.card3 {        
+    box-shadow: 0 4px 8px rgba(216, 213, 213, 0.1);
+    background: rgb(177, 77, 118);      
+    padding: 20px;      
+    margin: 15px auto; 
+    align-items: end;
+    display: flex; 
+    border-radius: 8px;
+    width: 300px;
+}
+.card3:hover {      
+    box-shadow: 0 8px 16px rgba(20, 1, 1, 0.2);      
+    transform: translateY(-5px);      
+    transition: all 0.5s ease;  
+}
+.card1, .card2, .card3
+{
+  margin: 15px;
+}
+/* Button */
+.btn {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+}

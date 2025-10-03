@@ -1,0 +1,37 @@
+/* Reset some defaults */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #66e1f1;
+}
+
+/* Box Model Demo */
+.box {
+  background: #cce7ff;
+  border: 5px solid #3399ff; /* border thickness and color */
+  padding: 20px;   /* inside spacing */
+  margin: 30px;    /* outside spacing */
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3); /* shadow effect */
+}
+
+/* Card with Shadow */
+.card {
+  background: #cce7ff;
+  border: 4px solid #79aff5;
+  padding: 20px;
+  width: 280px;
+  margin: 30px;
+  border-radius: 12px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);  /* shadow */
+}
+
+/* Text Styling */
+.styled-text {
+  font-size: 30px;
+  font-weight: bold;
+  font-style: atic;;
+  color: #d8f5b2;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
