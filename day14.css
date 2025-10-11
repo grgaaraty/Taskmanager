@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #ecdede;
+    color: #333;
+    transition: background 0.4s, color 0.4s;
+}
+
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo span {
+    color: #00ff0d;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #f80404;
+    font-weight: 500;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    background: linear-gradient(120deg, #00aaff, #0099ff);
+    color: #e20f0f;
+}
+
+.intro button {
+    padding: 10px 20px;
+    background: #fff;
+    color: #00aaff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.info {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    background: #222;
+    color: #fff;
+    padding: 10px;
+}
+
+.dark {
+    background: #222;
+    color: #fff;
+}
+.dark header {
+    background: #333;
+}
+.dark .intro {
+    background: linear-gradient(120deg, #444, #222);
+}
+.dark .intro button {
+    background: #00aaff;
+    color: white;
+}

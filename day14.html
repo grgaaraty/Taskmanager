@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 14 - Responsive Landing Page</title>
+    <link rel="stylesheet" href="style14.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h2 class="logo">Aaraty<span>Web</span></h2>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="day2.html">About</a></li>
+                <li><a href="day3.html">Services</a></li>
+                <li><a href="day4.html">Contact</a></li>
+            </ul>
+            <button id="themeBtn">🌙</button>
+        </nav>
+    </header>
+
+    <section class="intro">
+        <div class="intro-text">
+            <h1>Welcome to intro Page</h1>
+            <p>Learning web development step by step,todays day 14 of doing frontend dev </p>
+            <button id="learnBtn">Learn More</button>
+        </div>
+    </section>
+
+    <section class="info">
+        <h2>What I've been learning</h2>
+        <p>I've combined HTML structure, CSS responsiveness, and JS interactivity in this project.</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Aaraty Gurung | Web Dev Journey |</p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById("learnBtn");
+        const themeBtn = document.getElementById("themeBtn");
+        const body = document.body;
+
+        btn.addEventListener("click", () => {
+            alert("feel free to explore more...!");
+        });
+
+        themeBtn.addEventListener("click", () => {
+            body.classList.toggle("dark");
+        });
+    </script>
+</body>
+</html>
