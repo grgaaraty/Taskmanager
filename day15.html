@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15 learning utsav of JS Objects & JSON</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #344477;
+        }
+        h1 { color: #2696aa; }
+        pre {
+            background-color: #7878e4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 6px 12px;
+            border: none;
+            background-color: #317933;
+            color: rgb(216, 208, 208);
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #24a72b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Day 15: JS Objects, JSON & Arrays of Objects</h1>
+
+    <div class="section">
+        <h2>1. Object Example</h2>
+        <pre id="objOutput"></pre>
+    </div>
+
+    <div class="section">
+        <h2>2. JSON Example</h2>
+        <pre id="jsonOutput"></pre>
+    </div>
+
+    <div class="section">
+        <h2>3. Array of Objects Example</h2>
+        <pre id="arrayOutput"></pre>
+    </div>
+
+    <div class="section">
+        <h2>4. Practice Exercise</h2>
+        <pre id="exerciseOutput"></pre>
+        <button onclick="runExercise()">Run Exercise</button>
+    </div>
+
+    <script>
+        //obj example
+        let student = {
+            name: "Aaraty",
+            age: 21,
+            course: "Computer Engineering",
+            isActive: true
+        };
+        document.getElementById("objOutput").textContent = 
+            `Student Name: ${student.name}\nAge: ${student.age}\nCourse: ${student.course}\nActive: ${student.isActive}`;
+
+        // JSON Example
+        let jsonData = '{"name": "Aaraty", "age": 21, "course": "CS"}';
+        let objFromJson = JSON.parse(jsonData);
+        let backToJson = JSON.stringify(objFromJson);
+        document.getElementById("jsonOutput").textContent =
+            `Parsed JSON to Object: Name = ${objFromJson.name}, Age = ${objFromJson.age}\n` +
+            `Converted back to JSON: ${backToJson}`;
+
+        //  Array of Objects Example
+        let students = [
+            { name: "Aaraty", age: 21 },
+            { name: "abhi", age: 22 },
+            { name: "Indra", age: 23 }
+        ];
+
+        let arrayText = "";
+        students.forEach(function(s){
+            arrayText += `${s.name} is ${s.age} years old\n`;
+        });
+        document.getElementById("arrayOutput").textContent = arrayText;
+
+        // Practice Exercise Function
+        function runExercise() {
+            let books = [
+                { title: "Book A", author: "Author 1", year: 2019 },
+                { title: "Book B", author: "Author 2", year: 2021 },
+                { title: "Book C", author: "Author 3", year: 2022 }
+            ];
+
+            let booksAfter2020 = books.filter(book => book.year > 2020);
+            let booksJSON = JSON.stringify(booksAfter2020, null, 2); // pretty print JSON
+
+            document.getElementById("exerciseOutput").textContent = 
+                `Books after 2020:\n${booksAfter2020.map(b => b.title + " (" + b.year + ")").join("\n")}\n\n` +
+                `JSON String:\n${booksJSON}`;
+        }
+    </script>
+
+</body>
+</html>

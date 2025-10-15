@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 18 - Weather App</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(120deg, #89f7fe, #163868);
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+    .container {
+      background: white;
+      width: 350px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #2e4fa8;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 80%;
+      margin-bottom: 15px;
+      outline: none;
+      font-size: 1em;
+    }
+    button {
+      background: #2e4fa8;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #1f3779;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌤️ Simple Weather App</h1>
+    <input type="text" id="cityInput" placeholder="Enter city name...">
+    <button id="getWeatherBtn">Get Weather</button>
+    <div id="result">Enter a city name to check its weather</div>
+  </div>
+
+  <script>
+    const button = document.getElementById("getWeatherBtn");
+    const result = document.getElementById("result");
+    const cityInput = document.getElementById("cityInput");
+
+    button.addEventListener("click", () => {
+      const city = cityInput.value.trim();
+      if (!city) {
+        result.textContent = "city name needed";
+        return;
+      }
+
+      result.textContent = "Fetching weather data... ⏳";
+
+      // Open-Meteo API (No API key needed)
+      fetch(`https://api.open-meteo.com/v1/forecast?latitude=28.21&longitude=83.98&current_weather=true`)
+        .then(response => response.json())
+        .then(data => {
+          const weather = data.current_weather;
+          result.innerHTML = `
+            <p>📍 City: <b>${city}</b></p>
+            <p>🌡️ Temperature: <b>${weather.temperature}°C</b></p>
+            <p>💨 Wind Speed: <b>${weather.windspeed} km/h</b></p>
+            <p>🕒 Time: ${weather.time}</p>
+          `;
+        })
+        .catch(error => {
+          result.textContent = "❌ Could not fetch weather data.";
+          console.error(error);
+        });
+    });
+  </script>
+</body>
+</html>

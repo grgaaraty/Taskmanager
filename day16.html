@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day 16 ; Form Validation</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #80a8f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+        flex-direction: column;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  flex-direction: column;
+}
+
+.title img {
+  width: 30px;
+  height: 30px;
+  margin-left: 100;
+}
+    h1 {
+  margin-bottom: 50px;
+  font-size: 32px;
+  color: #0e245f;
+}
+    h2 {
+      text-align: center;
+      color: #111010;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #131111;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #3c6e71;
+      color: rgb(235, 231, 231);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #05263b;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Please login to confirm validation </h1>
+    </div>
+  <div class="container">
+    <div class="title">
+    <img src="https://imgs.search.brave.com/Rvtq2g6LNzJhE_ll6Hchb_BlSVz9BIaywLM1TH3b6nw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/aWNvbnNjb3V0LmNv/bS9pY29uL3ByZW1p/dW0vcG5nLTI1Ni10/aHVtYi91c2VyLWxv/Z2luLTQxMDAzNTIt/MzM5NDYzOS5wbmc_/Zj13ZWJwJnc9MTI4">
+
+    <h2>Login Form</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username">
+      <p id="userError" class="error"></p>
+      
+      <input type="password" id="password" placeholder="Password">
+      <p id="passError" class="error"></p>
+      
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+    const user = document.getElementById("username");
+    const pass = document.getElementById("password");
+    const userError = document.getElementById("userError");
+    const passError = document.getElementById("passError");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // stop form from submitting
+
+      let valid = true;
+
+      // clear old errors
+      userError.textContent = "";
+      passError.textContent = "";
+
+      // validate username
+      if (user.value.trim() === "") {
+        userError.textContent = "Username is required!";
+        valid = false;
+      }
+
+      // validate password
+      if (pass.value.trim() === "") {
+        passError.textContent = "Password is required!";
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Login Successful !!");
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
