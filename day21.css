@@ -1,0 +1,132 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #f5d0fe);
+  margin: 0;
+  text-align: center;
+   border-radius: 20px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+
+header {
+  background-color: #4f46e5;
+  color: white;
+  padding: 20px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+nav ul {
+  list-style: none;
+  background: white;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+nav a {
+  text-decoration: none;
+  color: #4f46e5;
+  font-weight: 600;
+}
+nav a:hover {
+  color: #a33030;
+}
+
+footer {
+  background: #4f46e5;
+  color: white;
+  padding: 10px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: 20px;
+}
+
+
+.progress h2 {
+  margin-bottom: 10px;
+  color: #4f46e5;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: #e5e7eb;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
+  border-radius: 15px;
+  transition: width 2s ease-in-out;
+}
+
+#progressText {
+  color: #333;
+  font-weight: 500;
+}
+
+.box {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.box:hover {
+  transform: perspective(600px) rotateY(6deg) scale(1.05);
+  box-shadow: 0 8px 25px rgba(79,70,229,0.3);
+}
+body {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Main Layout Fix === */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Ensure progress box doesn’t stretch full width */
+.progress {
+  flex: 1;
+  max-width: 300px;
+}
+
+/* Dashboard takes more space */
+.dashboard {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+}

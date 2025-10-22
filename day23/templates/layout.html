@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} | Flask Templates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='day23.css') }}">
+</head>
+<body>
+    <header>
+        <h1>🌼 Aaratys Portfolio</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>All Rights reserved by {{ name if name else "Aaraty" }}</p>
+    </footer>
+</body>
+</html>

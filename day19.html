@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ES6 Basics</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #418650;
+      margin: 40px;
+      text-align: center;
+      color: white;
+    }
+    .container {
+      background: rgb(12, 124, 59);
+      padding: 20px;
+      border-radius: 12px;
+      border-color: black;
+      border-style: groove;
+      width: 400px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(221, 93, 93, 0.3);
+    }
+    button {
+      padding: 8px 15px;
+      margin-top: 10px;
+      border-style:groove;
+      border-radius: 6px;
+      background: #1b5183;
+      color: rgb(239, 241, 239);
+      cursor: pointer;
+    }
+    button:hover {
+        background-color: rgb(17, 51, 160);
+        transform-style: preserve-3d;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition-property: background-color, transform;
+        transition-duration: 0.4s;
+        transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>exploring ES6 js Features</h1>
+    <p id="output">Click the button to see ES6 in action 👇</p>
+    <button onclick="showMessage()">Run Example</button>
+  </div>
+  <script>
+    let name = "Aaraty";
+    const college = "Pokhara Engineering College";
+    //  Arrow Function
+    const greet = (ppl) => `Hello ${ppl}! Welcome to ES6.`
+   // Template Literals
+    const intro = (name, college) => 
+      `My name is ${name} studying at ${college}.`;
+    // Default Parameter
+    const add = (a = 5, b = 10) => a + b;
+    //  Destructuring
+    const student = { fullName: "Aaraty Gurung", year: 2 };
+    const { fullName, year } = student;
+
+    function showMessage() {
+      const message = `${greet(name)} <br><br>
+         ${intro(name, college)} <br><br>
+         Add(5,10): ${add()} <br><br>
+        Destructured → ${fullName}, Year ${year}`;
+      document.getElementById("output").innerHTML = message;
+    }
+  </script>
+</body>
+</html>

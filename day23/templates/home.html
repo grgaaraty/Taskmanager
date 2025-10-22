@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Aaraty Gurung</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='day23.css') }}">
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a> |
+    <a href="/about">About</a> |
+    <a href="/contact">Contact</a> |
+    <a href="/services">Services</a>
+
+  </nav>
+
+{% extends "layout.html" %}
+{% block content %}
+<section class="main-content>
+    <h2>Hello {{ name }} </h2>
+  <p>This is the about page that will be updated soon but for now it's served dynamically by Flask.</p>
+</section>
+{% endblock %}
+
+</body>
+</html>

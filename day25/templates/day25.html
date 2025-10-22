@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Day 25 - Flask Forms</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    form { margin-bottom: 20px; }
+    input, button { padding: 6px 10px; margin: 5px; }
+    .box { background: #f9f9f9; padding: 15px; border-radius: 8px; width: 300px; }
+  </style>
+</head>
+<body>
+  <h2>Add a Task</h2>
+  <form method="POST">
+    <input type="text" name="task" placeholder="Enter your task" required>
+    <button type="submit">Add</button>
+  </form>
+
+  {% if task %}
+    <div class="box">
+      ✅ <b>Task added:</b> {{ task }}
+    </div>
+  {% endif %}
+
+  <h2>Submit Your Info</h2>
+  <form method="POST">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <button type="submit">Send</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  {% if name and email %}
+    <div class="box">
+      👤 <b>Name:</b> {{ name }}<br>
+      ✉️ <b>Email:</b> {{ email }}
+    </div>
+  {% endif %}
+  
+
+
+
+</body>
+</html>

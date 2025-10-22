@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='day23.css') }}">
+    <title>{{ title }}</title>
+
+</head>
+<body>
+<nav>
+    <a href="/">Home</a> |
+    <a href="/about">About</a> |
+    <a href="/contact">Contact</a>
+    <a href="/services">Services</a>
+</nav>
+<div class="box">
+ <div class="letters">
+{% extends "layout.html" %}
+{% block content %}
+<section class="about">
+
+<h1>My Skills</h1>
+<ul>
+    {% for skill in skills %}
+        <li>{{ skill }}</li>
+    {% endfor %}
+</ul>
+
+  <h2>About Me</h2>
+<p>I'm a Computer Engineering student leqarning web development and teaching.</p>
+<p>Currently on Day 24 of my 30-day web dev challenge!</p>
+</section>
+{% endblock %}
+  </div>
+<div class = "gui">
+<img src="{{ url_for('static', filename='images/traffix.jpeg') }}" width="300">
+<img src="{{ url_for('static', filename='images/screenshot (265).png') }}"  width="300">
+<img src="{{ url_for('static', filename='images/Screenshot (161).png') }}" width="300">
+</div>
+</div>
+</body>
+</html>
+
+

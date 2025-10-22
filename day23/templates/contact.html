@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='day23.css') }}">
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a> |
+    <a href="/about">About</a> |
+    <a href="/contact">Contact</a> |
+    <a href="/services">Services</a>
+  </nav>
+
+  {% extends "layout.html" %}
+{% block content %}
+<section class="contact">
+    <h1>Contact Us</h1>
+
+    <p>here i'll dropping my contact inf later <strong>email@example.com</strong> or LinkedIn.</p>
+</section>
+{% endblock %}
+
+</body>
+</html>
