@@ -2,11 +2,13 @@
 <html>
 <head>
   <title>Home - Day 27</title>
-  <link rel="stylesheet" href="day27.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='day27.css') }}">
 </head>
 <body>
-  <h2>Hello, {{ user }} /h2>
+    <div class="welcome">
+  <h2>Hello, {{ user }} </h2>
   <p>Welcome to your dashboard!</p>
   <a href="/logout">Logout</a>
+    </div>
 </body>
 </html>
