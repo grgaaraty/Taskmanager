@@ -65,10 +65,7 @@ button {
   cursor: pointer;
   transition: 0.3s ease;
 }
-.welcome {
-  display:flex;
 
-}
 
 button:hover {
   transform: scale(1.05);
@@ -76,7 +73,7 @@ button:hover {
 }
 
 h2 {
-  font-weight: 600;
+  font-weight: 6000;
   margin-bottom: 500px;
   color: #fff;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
@@ -133,4 +130,8 @@ button:hover {
 a {
   color: #007bff;
   text-decoration: none;
+}
+.boxx {
+  margin-top: 150px;
+  flex-direction: column;
 }
