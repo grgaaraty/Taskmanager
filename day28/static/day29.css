@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("/static/day28.jpg") center/cover no-repeat;
+  opacity: 0.9;
+  z-index: -1;
+}
+.card {
+  border-radius: 20px;
+  background: white;
+}
+.btn {
+  border-radius: 10px;
+}
+
