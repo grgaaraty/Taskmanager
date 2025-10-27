@@ -1,9 +1,9 @@
-# 🌐 30 Days of Web Development 
+# my 30 Days of webdev 
 
 **By:** Aaraty Gurung  
 
 
-## 🔹 Overview
+## 🔹 summary
 This project documents my webdev journey of learning web development from scratch from basic HTML CSS,to JS interactivity finishing with a working Flask backend connected to a database.
 
 
